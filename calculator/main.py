@@ -14,6 +14,12 @@ def main():
         return
 
     expression = " ".join(sys.argv[1:])
+    # Insert spaces between numbers and operators
+    expression = expression.replace("+", " + ")
+    expression = expression.replace("-", " - ")
+    expression = expression.replace("*", " * ")
+    expression = expression.replace("/", " / ")
+    
     try:
         result = calculator.evaluate(expression)
         to_print = render(expression, result)
